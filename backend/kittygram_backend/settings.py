@@ -9,9 +9,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv("SECRET_KEY", "django-123")
 
-DEBUG = True
+DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = eval(os.getenv('ALLOWED_HOSTS'))
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -85,7 +87,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = os.getenv('TIME_ZONE')
+
 
 USE_I18N = True
 
