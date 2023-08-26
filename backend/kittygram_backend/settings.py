@@ -12,7 +12,8 @@ SECRET_KEY = os.getenv("SECRET_KEY", "django-123")
 DEBUG = os.getenv('DEBUG')
 
 
-ALLOWED_HOSTS = eval(os.getenv('ALLOWED_HOSTS'))
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
+
 
 
 INSTALLED_APPS = [
